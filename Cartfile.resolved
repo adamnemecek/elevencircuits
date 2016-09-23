@@ -1,5 +1,5 @@
 github "dn-m/ArrayTools" "v2.0.3"
-github "jsbean/Labyrinth" "v0.2.1"
+github "jsbean/Labyrinth" "v0.3"
 github "dn-m/ArithmeticTools" "v0.3.17"
 github "dn-m/DictionaryTools" "v0.6.3"
-github "dn-m/Timeline" "v0.2.15"
+github "dn-m/Timeline" "v0.2.16"
