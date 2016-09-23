@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         let labyrinth = Labyrinth(amountCircuits: 11)
         
         let timeline = Timeline()
