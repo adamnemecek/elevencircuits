@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         
         view.layer.addSublayer(mixer)
         
+        // CREATE TIMELINE
         let timeline = Timeline()
         
         let labyrinth = Labyrinth(amountCircuits: 11)
@@ -55,7 +56,7 @@ class ViewController: UIViewController {
         cumulativeLengths.forEach { (offset, length) in
             timeline.add(at: Double(offset)) {
                 
-                let slider = UInt(Int.random(min: 0, max: 9))
+                let slider = UInt(Int.random(min: 0, max: 11))
                 let eqValue = Float.random()
                 
                 eq[slider].ramp(to: eqValue, over: Double(length))
