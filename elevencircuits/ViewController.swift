@@ -64,6 +64,7 @@ class ViewController: UIViewController {
         view.layer.addSublayer(circleLayer)
     }
     
+    // TODO: refactor this to `dn-m/ProgressBar` framework
     // TODO: animateCircle(radius:duration:)
     func animateCircle(duration: Double) {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
