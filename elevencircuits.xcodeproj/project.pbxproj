@@ -27,6 +27,18 @@
 		074194611D94320900376EF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 074194601D94320900376EF1 /* Assets.xcassets */; };
 		074194641D94320900376EF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 074194621D94320900376EF1 /* LaunchScreen.storyboard */; };
 		0741946C1D9442B800376EF1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0741946B1D9442B800376EF1 /* Media.xcassets */; };
+		07B0AF2F1D96EBC500B600B3 /* Color.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF291D96EBC500B600B3 /* Color.framework */; };
+		07B0AF301D96EBC500B600B3 /* Color.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF291D96EBC500B600B3 /* Color.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B0AF311D96EBC500B600B3 /* CompoundController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF2A1D96EBC500B600B3 /* CompoundController.framework */; };
+		07B0AF321D96EBC500B600B3 /* CompoundController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF2A1D96EBC500B600B3 /* CompoundController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B0AF331D96EBC500B600B3 /* CompoundControllerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF2B1D96EBC500B600B3 /* CompoundControllerView.framework */; };
+		07B0AF341D96EBC500B600B3 /* CompoundControllerView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF2B1D96EBC500B600B3 /* CompoundControllerView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B0AF351D96EBC500B600B3 /* ControllerElements.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF2C1D96EBC500B600B3 /* ControllerElements.framework */; };
+		07B0AF361D96EBC500B600B3 /* ControllerElements.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF2C1D96EBC500B600B3 /* ControllerElements.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B0AF371D96EBC500B600B3 /* GraphicsTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF2D1D96EBC500B600B3 /* GraphicsTools.framework */; };
+		07B0AF381D96EBC500B600B3 /* GraphicsTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF2D1D96EBC500B600B3 /* GraphicsTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B0AF391D96EBC500B600B3 /* PathTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF2E1D96EBC500B600B3 /* PathTools.framework */; };
+		07B0AF3A1D96EBC500B600B3 /* PathTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0AF2E1D96EBC500B600B3 /* PathTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07C2961E1D9473350033A5BE /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C296191D9473350033A5BE /* ArithmeticTools.framework */; };
 		07C2961F1D9473360033A5BE /* ArithmeticTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07C296191D9473350033A5BE /* ArithmeticTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07C296201D9473360033A5BE /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C2961A1D9473350033A5BE /* ArrayTools.framework */; };
@@ -46,11 +58,17 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				07B0AF361D96EBC500B600B3 /* ControllerElements.framework in Embed Frameworks */,
+				07B0AF341D96EBC500B600B3 /* CompoundControllerView.framework in Embed Frameworks */,
 				07C296251D9473360033A5BE /* Labyrinth.framework in Embed Frameworks */,
+				07B0AF381D96EBC500B600B3 /* GraphicsTools.framework in Embed Frameworks */,
 				07C296271D9473360033A5BE /* Timeline.framework in Embed Frameworks */,
 				07C296211D9473360033A5BE /* ArrayTools.framework in Embed Frameworks */,
 				07C296231D9473360033A5BE /* DictionaryTools.framework in Embed Frameworks */,
+				07B0AF321D96EBC500B600B3 /* CompoundController.framework in Embed Frameworks */,
+				07B0AF301D96EBC500B600B3 /* Color.framework in Embed Frameworks */,
 				07C2961F1D9473360033A5BE /* ArithmeticTools.framework in Embed Frameworks */,
+				07B0AF3A1D96EBC500B600B3 /* PathTools.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +116,12 @@
 		074194631D94320900376EF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		074194651D94320900376EF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0741946B1D9442B800376EF1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		07B0AF291D96EBC500B600B3 /* Color.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Color.framework; path = Carthage/Build/iOS/Color.framework; sourceTree = "<group>"; };
+		07B0AF2A1D96EBC500B600B3 /* CompoundController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CompoundController.framework; path = Carthage/Build/iOS/CompoundController.framework; sourceTree = "<group>"; };
+		07B0AF2B1D96EBC500B600B3 /* CompoundControllerView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CompoundControllerView.framework; path = Carthage/Build/iOS/CompoundControllerView.framework; sourceTree = "<group>"; };
+		07B0AF2C1D96EBC500B600B3 /* ControllerElements.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ControllerElements.framework; path = Carthage/Build/iOS/ControllerElements.framework; sourceTree = "<group>"; };
+		07B0AF2D1D96EBC500B600B3 /* GraphicsTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsTools.framework; path = Carthage/Build/iOS/GraphicsTools.framework; sourceTree = "<group>"; };
+		07B0AF2E1D96EBC500B600B3 /* PathTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PathTools.framework; path = Carthage/Build/iOS/PathTools.framework; sourceTree = "<group>"; };
 		07C296191D9473350033A5BE /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/iOS/ArithmeticTools.framework; sourceTree = "<group>"; };
 		07C2961A1D9473350033A5BE /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/iOS/ArrayTools.framework; sourceTree = "<group>"; };
 		07C2961B1D9473350033A5BE /* DictionaryTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DictionaryTools.framework; path = Carthage/Build/iOS/DictionaryTools.framework; sourceTree = "<group>"; };
@@ -110,11 +134,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B0AF351D96EBC500B600B3 /* ControllerElements.framework in Frameworks */,
+				07B0AF331D96EBC500B600B3 /* CompoundControllerView.framework in Frameworks */,
 				07C296241D9473360033A5BE /* Labyrinth.framework in Frameworks */,
+				07B0AF371D96EBC500B600B3 /* GraphicsTools.framework in Frameworks */,
 				07C296261D9473360033A5BE /* Timeline.framework in Frameworks */,
 				07C296201D9473360033A5BE /* ArrayTools.framework in Frameworks */,
 				07C296221D9473360033A5BE /* DictionaryTools.framework in Frameworks */,
+				07B0AF311D96EBC500B600B3 /* CompoundController.framework in Frameworks */,
+				07B0AF2F1D96EBC500B600B3 /* Color.framework in Frameworks */,
 				07C2961E1D9473350033A5BE /* ArithmeticTools.framework in Frameworks */,
+				07B0AF391D96EBC500B600B3 /* PathTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +193,12 @@
 		0741944D1D94320900376EF1 = {
 			isa = PBXGroup;
 			children = (
+				07B0AF291D96EBC500B600B3 /* Color.framework */,
+				07B0AF2A1D96EBC500B600B3 /* CompoundController.framework */,
+				07B0AF2B1D96EBC500B600B3 /* CompoundControllerView.framework */,
+				07B0AF2C1D96EBC500B600B3 /* ControllerElements.framework */,
+				07B0AF2D1D96EBC500B600B3 /* GraphicsTools.framework */,
+				07B0AF2E1D96EBC500B600B3 /* PathTools.framework */,
 				07C296191D9473350033A5BE /* ArithmeticTools.framework */,
 				07C2961A1D9473350033A5BE /* ArrayTools.framework */,
 				07C2961B1D9473350033A5BE /* DictionaryTools.framework */,
@@ -280,6 +316,12 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ArithmeticTools.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Timeline.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Labyrinth.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Color.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CompoundController.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CompoundControllerView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ControllerElements.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/GraphicsTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PathTools.framework",
 			);
 			outputPaths = (
 			);
