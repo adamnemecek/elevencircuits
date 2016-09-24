@@ -8,5 +8,5 @@
 
 public protocol ContinuousController {
     
-    func ramp(to value: Float, over duration: Double)
+    func ramp(to newValue: Float, over duration: Double)
 }

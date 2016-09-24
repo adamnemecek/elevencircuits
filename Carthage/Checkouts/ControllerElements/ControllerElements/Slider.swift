@@ -50,15 +50,14 @@ public class Slider: CALayer, CompositeShapeType {
     
     public func addOutline() {
         borderWidth = 1
-        borderColor = Color(gray: 0, alpha: 1).cgColor
+        borderColor = Color(gray: 0.5, alpha: 1).cgColor
     }
     
     public func addIndicator() {
         let path = Path.rectangle(rectangle: CGRect(x: 0, y: 0, width: frame.width, height: 2))
         let shape = CAShapeLayer()
         shape.path = path.cgPath
-        shape.lineWidth = 1
-        shape.strokeColor = Color(gray: 0, alpha: 1).cgColor
+        shape.fillColor = Color(gray: 0.5, alpha: 1).cgColor
         layer.addSublayer(shape)
         indicator = shape
     }
@@ -81,13 +80,17 @@ public class Slider: CALayer, CompositeShapeType {
 
 extension Slider: ContinuousController {
     
-    public func ramp(to value: Float, over duration: Double = 0) {
+    public func ramp(to newValue: Float, over duration: Double = 0) {
         let animation = CABasicAnimation(keyPath: "position.y")
         animation.duration = duration
-        animation.fromValue = indicator.position.y
-        animation.toValue = altitude(from: value)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.fromValue = altitude(from: value)
+        animation.toValue = altitude(from: newValue)
         animation.fillMode = kCAFillModeForwards
         animation.isRemovedOnCompletion = false
         indicator.add(animation, forKey: "position.y")
+        
+        // update instance-level property `value`
+        self.value = newValue
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 import ArithmeticTools
 import Labyrinth
 import Timeline
+import CompoundControllerView
 
 class ViewController: UIViewController {
 
@@ -18,14 +19,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // TEST EQUALIZER
+        let center = 0.5 * view.frame.width
+        let width: CGFloat = 400
         
-        let labyrinth = Labyrinth(amountCircuits: 11)
+        let eq = GraphicEqualizerView(
+            frame: CGRect(x: center - 0.5 * width, y: 400, width: 400, height: 200),
+            amountBands: 10
+        )
+        
+        view.layer.addSublayer(eq)
+        
+        // TEST MATRIX MIXER
+        let mixer = MatrixMixerView(
+            frame: CGRect(x: center - 0.5 * width, y: 650, width: width, height: width),
+            amountInputs: 4,
+            amountOutputs: 4
+        )
+        
+        view.layer.addSublayer(mixer)
         
         let timeline = Timeline()
         
+        let labyrinth = Labyrinth(amountCircuits: 11)
         let lengths = labyrinth.path.map { $0.length } + labyrinth.path.reversed().map { $0.length }
-        
-        
         print(lengths.map { $0 * 10 }.sum / 60)
             
         let cumulativeLengths = zip(
@@ -36,7 +53,21 @@ class ViewController: UIViewController {
         lengths.forEach { print($0) }
             
         cumulativeLengths.forEach { (offset, length) in
-            timeline.add(at: Double(offset)) { self.animateCircle(duration: Double(length)) }
+            timeline.add(at: Double(offset)) {
+                
+                let slider = UInt(Int.random(min: 0, max: 9))
+                let eqValue = Float.random()
+                
+                eq[slider].ramp(to: eqValue, over: Double(length))
+                
+                let input = UInt(Int.random(min: 0, max: 4))
+                let output = UInt(Int.random(min: 0, max: 4))
+                let sendValue = Float.random()
+                
+                mixer[input, output].ramp(to: sendValue, over: Double(length))
+                
+                self.animateCircle(duration: Double(length))
+            }
         }
         
         timeline.start()
