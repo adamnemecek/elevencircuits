@@ -12,12 +12,26 @@ import Labyrinth
 import Timeline
 import CompoundControllerView
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, F53OSCPacketDestination {
 
     var circleLayer: CAShapeLayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // OSC
+        
+        let oscServer = F53OSCServer()
+        oscServer.port = 9999
+        oscServer.startListening()
+        
+        let oscClient = F53OSCClient()
+        oscClient.port = 9999
+        oscClient.host = "127.0.0.1"
+        
+        let message = F53OSCMessage(addressPattern: "/button", arguments: ["bang"])
+        print("message from: \(message)")
+        oscClient.send(message)
 
         // TEST EQUALIZER
         let center = 0.5 * view.frame.width
@@ -105,6 +119,12 @@ class ViewController: UIViewController {
         animation.toValue = 1
         circleLayer.strokeEnd = 1.0
         circleLayer.add(animation, forKey: "animateCircle")
+    }
+    
+    func take(_ message: F53OSCMessage!) {
+        print("message received")
+        print(message.addressPattern)
+        print(message.arguments)
     }
 
     override func didReceiveMemoryWarning() {
