@@ -18,20 +18,7 @@ class ViewController: UIViewController, F53OSCPacketDestination {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // OSC
-        
-        let oscServer = F53OSCServer()
-        oscServer.port = 9999
-        oscServer.startListening()
-        
-        let oscClient = F53OSCClient()
-        oscClient.port = 9999
-        oscClient.host = "127.0.0.1"
-        
-        let message = F53OSCMessage(addressPattern: "/button", arguments: ["bang"])
-        print("message from: \(message)")
-        oscClient.send(message)
+    
 
         // TEST EQUALIZER
         let center = 0.5 * view.frame.width
