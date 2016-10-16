@@ -10,16 +10,21 @@ import UIKit
 import ArithmeticTools
 import Labyrinth
 import Timeline
+import PathTools
 import CompoundControllerView
 
 class ViewController: UIViewController, F53OSCPacketDestination {
 
     var circleLayer: CAShapeLayer!
     
+    var leftWidth: CGFloat { return 0.382 * view.frame.width }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
-
+        createDivider()
+        createCircleProgressBar()
+    
         // TEST EQUALIZER
         let center = 0.5 * view.frame.width
         let width: CGFloat = 400
@@ -73,13 +78,27 @@ class ViewController: UIViewController, F53OSCPacketDestination {
         }
         
         timeline.start()
+    }
+    
+    private func createDivider() {
+        let divider = CAShapeLayer()
+        let dividerPath = Path()
+            .move(to: CGPoint(x: leftWidth, y: 0))
+            .addLine(to: CGPoint(x: leftWidth, y: view.frame.height))
+        divider.path = dividerPath.cgPath
+        divider.lineWidth = 1
+        divider.strokeColor = UIColor.white.cgColor
+        view.layer.addSublayer(divider)
+    }
+    
+    private func createCircleProgressBar() {
         
         let startAngle = CGFloat((3 * M_PI) / 2)
         let endAngle = startAngle + CGFloat(2 * M_PI)
         
         let circlePath = UIBezierPath(
-            arcCenter: CGPoint(x: view.frame.size.width / 2.0, y: view.frame.size.height / 2.0),
-            radius: (view.frame.size.width - 10) / 2,
+            arcCenter: CGPoint(x: 0.5 * leftWidth, y: view.frame.height / 2.0),
+            radius: (leftWidth - 50) / 2,
             startAngle: startAngle,
             endAngle: endAngle,
             clockwise: true
@@ -90,8 +109,6 @@ class ViewController: UIViewController, F53OSCPacketDestination {
         circleLayer.fillColor = nil
         circleLayer.strokeColor = UIColor.red.cgColor
         circleLayer.lineWidth = 5
-        
-        // don't draw yet
         circleLayer.strokeEnd = 0.0
         
         view.layer.addSublayer(circleLayer)
