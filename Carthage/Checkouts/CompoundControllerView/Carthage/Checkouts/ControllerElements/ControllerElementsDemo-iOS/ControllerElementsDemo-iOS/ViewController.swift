@@ -12,7 +12,7 @@ import ControllerElements
 class ViewController: UIViewController {
 
     let d = Dial(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-    let s = Slider(frame: CGRect(x: 0, y: 0, width: 20, height: 300))
+    let s = Slider(frame: CGRect(x: 0, y: 0, width: 30, height: 300), label: "16K")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +20,12 @@ class ViewController: UIViewController {
         d.position = CGPoint(x: 100, y: 0.5 * view.frame.width)
         view.layer.addSublayer(d)
         
-        d.ramp(to: 0.75, over: 20)
+        d.ramp(to: 1, over: 20)
         
         s.position.x = 0.5 * view.frame.width
         s.position.y = 200
         
-        s.ramp(to: 0.75, over: 12)
+        s.ramp(to: 1, over: 10)
         
         view.layer.addSublayer(s)
     }

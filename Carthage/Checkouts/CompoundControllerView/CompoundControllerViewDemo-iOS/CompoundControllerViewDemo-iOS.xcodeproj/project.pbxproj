@@ -12,7 +12,41 @@
 		0787A0FE1D8F1F7900AB9396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0787A0FC1D8F1F7900AB9396 /* Main.storyboard */; };
 		0787A1001D8F1F7900AB9396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0787A0FF1D8F1F7900AB9396 /* Assets.xcassets */; };
 		0787A1031D8F1F7900AB9396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0787A1011D8F1F7900AB9396 /* LaunchScreen.storyboard */; };
+		07B2F4891DB4505F00187944 /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C930BE129FCB639312BECDE0 /* ArrayTools.framework */; };
+		07B2F48A1DB4505F00187944 /* ArrayTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C930BE129FCB639312BECDE0 /* ArrayTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B2F48B1DB4505F00187944 /* Color.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 878A92D5D9CBA393B923D86A /* Color.framework */; };
+		07B2F48C1DB4505F00187944 /* Color.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 878A92D5D9CBA393B923D86A /* Color.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B2F48D1DB4505F00187944 /* CompoundController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7B9255BAF325921913C28E /* CompoundController.framework */; };
+		07B2F48E1DB4505F00187944 /* CompoundController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7B9255BAF325921913C28E /* CompoundController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B2F48F1DB4505F00187944 /* ControllerElements.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951D9B1EC50B0572195B8899 /* ControllerElements.framework */; };
+		07B2F4901DB4505F00187944 /* ControllerElements.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 951D9B1EC50B0572195B8899 /* ControllerElements.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B2F4911DB4505F00187944 /* GraphicsTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF4641664415A2F5EDC6EB3 /* GraphicsTools.framework */; };
+		07B2F4921DB4505F00187944 /* GraphicsTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BFF4641664415A2F5EDC6EB3 /* GraphicsTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B2F4931DB4505F00187944 /* PathTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA83B37EF0A08ED07FEBF50 /* PathTools.framework */; };
+		07B2F4941DB4505F00187944 /* PathTools.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA83B37EF0A08ED07FEBF50 /* PathTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07B2F4971DB4507A00187944 /* CompoundControllerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B2F4961DB4507A00187944 /* CompoundControllerView.framework */; };
+		07B2F4981DB4507A00187944 /* CompoundControllerView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07B2F4961DB4507A00187944 /* CompoundControllerView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		07B2F4951DB4505F00187944 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				07B2F48C1DB4505F00187944 /* Color.framework in Embed Frameworks */,
+				07B2F4941DB4505F00187944 /* PathTools.framework in Embed Frameworks */,
+				07B2F4901DB4505F00187944 /* ControllerElements.framework in Embed Frameworks */,
+				07B2F48A1DB4505F00187944 /* ArrayTools.framework in Embed Frameworks */,
+				07B2F4981DB4507A00187944 /* CompoundControllerView.framework in Embed Frameworks */,
+				07B2F4921DB4505F00187944 /* GraphicsTools.framework in Embed Frameworks */,
+				07B2F48E1DB4505F00187944 /* CompoundController.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0787A0F51D8F1F7900AB9396 /* CompoundControllerViewDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CompoundControllerViewDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +56,13 @@
 		0787A0FF1D8F1F7900AB9396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0787A1021D8F1F7900AB9396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0787A1041D8F1F7900AB9396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07B2F4961DB4507A00187944 /* CompoundControllerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CompoundControllerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EA83B37EF0A08ED07FEBF50 /* PathTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PathTools.framework; path = Carthage/Build/iOS/PathTools.framework; sourceTree = "<group>"; };
+		878A92D5D9CBA393B923D86A /* Color.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Color.framework; path = Carthage/Build/iOS/Color.framework; sourceTree = "<group>"; };
+		951D9B1EC50B0572195B8899 /* ControllerElements.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ControllerElements.framework; path = Carthage/Build/iOS/ControllerElements.framework; sourceTree = "<group>"; };
+		9E7B9255BAF325921913C28E /* CompoundController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CompoundController.framework; path = Carthage/Build/iOS/CompoundController.framework; sourceTree = "<group>"; };
+		BFF4641664415A2F5EDC6EB3 /* GraphicsTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsTools.framework; path = Carthage/Build/iOS/GraphicsTools.framework; sourceTree = "<group>"; };
+		C930BE129FCB639312BECDE0 /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/iOS/ArrayTools.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +70,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B2F48B1DB4505F00187944 /* Color.framework in Frameworks */,
+				07B2F4931DB4505F00187944 /* PathTools.framework in Frameworks */,
+				07B2F48F1DB4505F00187944 /* ControllerElements.framework in Frameworks */,
+				07B2F4891DB4505F00187944 /* ArrayTools.framework in Frameworks */,
+				07B2F4911DB4505F00187944 /* GraphicsTools.framework in Frameworks */,
+				07B2F48D1DB4505F00187944 /* CompoundController.framework in Frameworks */,
+				07B2F4971DB4507A00187944 /* CompoundControllerView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +86,7 @@
 		0787A0EC1D8F1F7900AB9396 = {
 			isa = PBXGroup;
 			children = (
+				07B2F4961DB4507A00187944 /* CompoundControllerView.framework */,
 				0787A0F71D8F1F7900AB9396 /* CompoundControllerViewDemo-iOS */,
 				0787A0F61D8F1F7900AB9396 /* Products */,
 			);
@@ -74,6 +123,8 @@
 				0787A0F11D8F1F7900AB9396 /* Sources */,
 				0787A0F21D8F1F7900AB9396 /* Frameworks */,
 				0787A0F31D8F1F7900AB9396 /* Resources */,
+				07B2F4951DB4505F00187944 /* Embed Frameworks */,
+				07B2F4991DB4508A00187944 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -131,6 +182,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07B2F4991DB4508A00187944 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/Color.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/GraphicsTools.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/PathTools.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/ArrayTools.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/CompoundController.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/ControllerElements.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0787A0F11D8F1F7900AB9396 /* Sources */ = {
@@ -262,7 +335,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "CompoundControllerViewDemo-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.CompoundControllerViewDemo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,7 +354,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F8LCL8SXLX;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "CompoundControllerViewDemo-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.CompoundControllerViewDemo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +387,7 @@
 				0787A1091D8F1F7900AB9396 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

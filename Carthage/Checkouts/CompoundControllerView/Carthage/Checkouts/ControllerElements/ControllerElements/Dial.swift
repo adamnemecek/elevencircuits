@@ -13,14 +13,10 @@ import GraphicsTools
 
 public class Dial: CALayer, CompositeShapeType {
     
-    // Value between 0 and 1
-    public let operationRange: Range<Float> = 0 ..< 1
-
     fileprivate let layer = CALayer()
     
     public var value: Float = 0.0 {
         
-        // TODO: refactor this as method: updateRotation()
         didSet {
             guard value >= 0.0 && value <= 1.0 else { return }
             updateRotation(value: value)
@@ -94,6 +90,10 @@ public class Dial: CALayer, CompositeShapeType {
         CATransaction.setDisableActions(false)
     }
     
+    fileprivate func rotation(from value: Float) -> CGFloat {
+        return CGFloat(value) * 360
+    }
+    
     private func rotationTransform(degrees: CGFloat) -> CGAffineTransform {
         var transform = CGAffineTransform.identity
         transform = transform.rotated(by: DEGREES_TO_RADIANS(degrees))
@@ -103,16 +103,20 @@ public class Dial: CALayer, CompositeShapeType {
 
 extension Dial: ContinuousController {
     
-    public func ramp(to value: Float, over duration: Double = 0) {
-        let degrees = CGFloat(value) * 360
-        let startRotation = layer.value(forKeyPath: "transform.rotation")
+    public func ramp(to newValue: Float, over duration: Double = 0) {
+        //let degrees = CGFloat(newValue) * 360
+        //let startRotation = layer.value(forKeyPath: "transform.rotation")
         let animation = CABasicAnimation(keyPath: "transform.rotation")
         animation.duration = duration
-        animation.fromValue = startRotation
-        animation.toValue = CGFloat(startRotation as! Float) + DEGREES_TO_RADIANS(degrees)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.fromValue = DEGREES_TO_RADIANS(rotation(from: value))
+        animation.toValue = DEGREES_TO_RADIANS(rotation(from: newValue))
         animation.fillMode = kCAFillModeForwards
         animation.isRemovedOnCompletion = false
         layer.add(animation, forKey: "transform.rotation")
+        
+        // update instance property `value`
+        value = newValue
     }
 }
 

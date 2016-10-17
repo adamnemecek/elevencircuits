@@ -251,7 +251,6 @@
 				96159857A359E24C90DDEBF0 /* Sources */,
 				99DAC91BEB4E416EF2F5EFC2 /* Frameworks */,
 				18649C2DF15769B2181DF194 /* Headers */,
-				E5C00B0BCB042F4DEF9F804F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -269,6 +268,7 @@
 				FC27EF57F023A81491DF9742 /* Sources */,
 				D54B91C6CB268426D4AAACE3 /* Frameworks */,
 				780B5FB8C3DE8A4CF2A34F6F /* CopyFiles */,
+				076AFFE31D96F0E0002F7B7D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -287,7 +287,6 @@
 				7481496345816775F04EB8B1 /* Sources */,
 				507B7F565475BC4EFE0E62A9 /* Frameworks */,
 				0F4B743BAF6F3F91EA77EBF4 /* Headers */,
-				BAFEAF7265B83E218B53D52C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -305,6 +304,7 @@
 				5BEA12F7EE86951D7611068D /* Sources */,
 				CBF0F579DCDB02B5C0C33080 /* Frameworks */,
 				0AA56EE3B4F600CB338E17E5 /* CopyFiles */,
+				076AFFE21D96F01F002F7B7D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -354,23 +354,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BAFEAF7265B83E218B53D52C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/Color.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/GraphicsTools.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/PathTools.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		E5C00B0BCB042F4DEF9F804F /* ShellScript */ = {
+		076AFFE21D96F01F002F7B7D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -379,6 +363,22 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Color.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/GraphicsTools.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PathTools.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		076AFFE31D96F0E0002F7B7D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Color.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/GraphicsTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/PathTools.framework",
 			);
 			outputPaths = (
 			);
@@ -480,7 +480,7 @@
 		18F4597C1BB85F5DC512925C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -554,7 +554,7 @@
 		72F4E4D48952BCA0E8074E0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -573,6 +573,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bean.ControllerElements;
 				PRODUCT_NAME = ControllerElements;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -632,7 +633,7 @@
 		D25B1245A2F8FC89AAEC0FA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -665,7 +666,7 @@
 		FA49EC7A88EF5C0ECEBA1C79 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -684,6 +685,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bean.ControllerElements;
 				PRODUCT_NAME = ControllerElements;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,10 +32,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Kb7-NE-saS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="35d-4N-rci"/>
-                            <constraint firstItem="eRI-qa-ir9" firstAttribute="top" secondItem="Kb7-NE-saS" secondAttribute="bottom" constant="19" id="HME-z2-YO1"/>
-                            <constraint firstItem="Kb7-NE-saS" firstAttribute="centerX" secondItem="eRI-qa-ir9" secondAttribute="centerX" id="Sat-6H-zMt"/>
-                            <constraint firstItem="Kb7-NE-saS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="283" id="TEe-7X-BG1"/>
+                            <constraint firstItem="Kb7-NE-saS" firstAttribute="leading" secondItem="eRI-qa-ir9" secondAttribute="leading" id="1hw-AT-foQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eRI-qa-ir9" secondAttribute="bottom" constant="14" id="PdU-5T-JAI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Kb7-NE-saS" secondAttribute="bottom" constant="33" id="Wyk-24-Of6"/>
+                            <constraint firstItem="Kb7-NE-saS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dwI-lM-WYQ"/>
                         </constraints>
                     </view>
                 </viewController>
