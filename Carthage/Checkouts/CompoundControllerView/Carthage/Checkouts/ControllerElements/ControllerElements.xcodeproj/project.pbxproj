@@ -174,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				2B53B54886E9874FF65904C5 /* Supporting Files */,
-				0748D2B71D8B33E300EF65A2 /* Dial.swift */,
 				0767870E1D903F9A0029ACB2 /* ContinuousController.swift */,
+				0748D2B71D8B33E300EF65A2 /* Dial.swift */,
 				074547981D8D906000346242 /* Slider.swift */,
 			);
 			name = ControllerElements;

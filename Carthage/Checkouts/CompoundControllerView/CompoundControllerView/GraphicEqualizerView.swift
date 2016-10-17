@@ -61,6 +61,12 @@ public class GraphicEqualizerView: CompoundControllerView {
         }
     }
     
+    // FIXME: Use dictionary to store this data.
+    public subscript (label: String) -> Slider {
+        guard let index = bands.index(of: label) else { fatalError("Invalid band") }
+        return self[UInt(index)]
+    }
+    
     // TODO: add labels for -12, -6, 0, 6, 12
     private func configureBackground() {
         createReferenceLines()
@@ -93,7 +99,7 @@ public class GraphicEqualizerView: CompoundControllerView {
             let lineLayer = CAShapeLayer()
             lineLayer.path = linePath.cgPath
             lineLayer.lineWidth = 1
-            lineLayer.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
+            lineLayer.strokeColor = Color(gray: 0.1, alpha: 1).cgColor
             addSublayer(lineLayer)
         }
     }
@@ -108,8 +114,8 @@ public class GraphicEqualizerView: CompoundControllerView {
             
             let lineLayer = CAShapeLayer()
             lineLayer.path = linePath.cgPath
-            lineLayer.lineWidth = 1
-            lineLayer.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
+            lineLayer.lineWidth = 2
+            lineLayer.strokeColor = Color(gray: 0.1, alpha: 1).cgColor
             addSublayer(lineLayer)
         }
     }

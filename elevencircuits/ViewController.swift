@@ -18,6 +18,7 @@ class ViewController: UIViewController, F53OSCPacketDestination {
     let timeline = Timeline()
     var circleLayer: CAShapeLayer!
     var graphicEqualizer: GraphicEqualizerView!
+    var nanoKontrol: NanoKontrolView!
     
     var leftWidth: CGFloat { return 0.382 * view.frame.width }
     var leftCenter: CGFloat { return 0.5 * leftWidth }
@@ -41,6 +42,13 @@ class ViewController: UIViewController, F53OSCPacketDestination {
             lengths.map { $0 * 10 }
         )
         
+        graphicEqualizer["GAIN"].ramp(to: 1)
+        graphicEqualizer[10].ramp(to: 0.5)
+        
+        nanoKontrol.channels[1].dial.ramp(to: 1)
+        nanoKontrol.channels[3].slider.ramp(to: 0.33, over: 3)
+        nanoKontrol.channels[3].dial.ramp(to: 0.6, over: 10)
+        
         lengths.forEach { print($0) }
             
         cumulativeLengths.forEach { (offset, length) in
@@ -58,7 +66,7 @@ class ViewController: UIViewController, F53OSCPacketDestination {
     }
     
     private func createNanoKontrol() {
-        let nanoKontrol = NanoKontrolView(
+        self.nanoKontrol = NanoKontrolView(
             frame: CGRect(x: 700, y: 100, width: 400, height: 300)
         )
         view.layer.addSublayer(nanoKontrol)
@@ -106,7 +114,8 @@ class ViewController: UIViewController, F53OSCPacketDestination {
         self.circleLayer = CAShapeLayer()
         circleLayer.path = circlePath.cgPath
         circleLayer.fillColor = nil
-        circleLayer.strokeColor = UIColor.orange.cgColor
+        circleLayer.strokeColor = UIColor.cyan.cgColor
+        circleLayer.opacity = 0.5
         circleLayer.lineWidth = 5
         circleLayer.strokeEnd = 0.0
         

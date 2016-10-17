@@ -23,7 +23,7 @@ public class Dial: CALayer, CompositeShapeType {
         }
     }
     
-    public var operatingInterval: (Float, Float) = (0.0, 1.0)
+    public var operatingInterval: (Float, Float) = (0.1, 0.9)
     
     /// Components that need to built and commited
     public var components: [CALayer] = []
@@ -48,11 +48,12 @@ public class Dial: CALayer, CompositeShapeType {
         super.init()
     }
     
-    public init(frame: CGRect, operatingInterval: (Float, Float) = (0.0, 1.0)) {
+    public init(frame: CGRect, operatingInterval: (Float, Float) = (0.1, 0.9)) {
         self.operatingInterval = operatingInterval
         super.init()
         self.frame = frame
         createComponents()
+        ramp(to: 0)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -112,8 +113,6 @@ public class Dial: CALayer, CompositeShapeType {
 extension Dial: ContinuousController {
     
     public func ramp(to newValue: Float, over duration: Double = 0) {
-        //let degrees = CGFloat(newValue) * 360
-        //let startRotation = layer.value(forKeyPath: "transform.rotation")
         let animation = CABasicAnimation(keyPath: "transform.rotation")
         animation.duration = duration
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)

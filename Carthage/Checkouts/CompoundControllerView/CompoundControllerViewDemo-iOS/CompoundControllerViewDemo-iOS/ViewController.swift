@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         view.layer.addSublayer(eq)
         
         eq[2].ramp(to: 0.5, over: 20)
+        
+        eq["8K"].ramp(to: 1)
 
         
         // Test NanoKontrol
