@@ -291,8 +291,17 @@ class ViewController: UIViewController, F53OSCPacketDestination {
     
     private func createNanoKontrol() {
         nanoKontrol?.removeFromSuperlayer()
+        
+        let width = rightWidth - 300
+        let height = 1/2 * width
+        
         self.nanoKontrol = NanoKontrolView(
-            frame: CGRect(x: 700, y: 100, width: 400, height: 300)
+            frame: CGRect(
+                x: rightCenter - 0.5 * width,
+                y: 200 - 0.5 * height,
+                width: width,
+                height: height
+            )
         )
         view.layer.addSublayer(nanoKontrol)
     }
