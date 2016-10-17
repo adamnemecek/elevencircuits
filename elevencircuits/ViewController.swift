@@ -224,6 +224,12 @@ class ViewController: UIViewController, F53OSCPacketDestination {
         rampNanoKontrolSlider(3, to: 0.25, over: 25..<29)
         // Crossfade saw -> sin
         rampNanoKontrolDial(3, to: 0, at: lengths.sum, over: 30)
+        
+        // add one more circle progress bar event for last section
+        timeline.add(at: lengths.sum) {
+            self.animateCircle(duration: 30)
+        }
+        
         // Quickly mute sin
         rampNanoKontrolSlider(3, to: 0, at: lengths.sum + 30, over: 0.125)
         
@@ -248,6 +254,12 @@ class ViewController: UIViewController, F53OSCPacketDestination {
         
         // Fade out by end of section 5
         rampNanoKontrolSlider(2, to: 0, over: 18..<25)
+        
+        
+        // STOP
+        timeline.add(at: lengths.sum + 35) {
+            self.stop()
+        }
     }
     
     private func rampNanoKontrolDial(_ channel: Int, to value: Float, at offset: Double, over duration: Double) {
