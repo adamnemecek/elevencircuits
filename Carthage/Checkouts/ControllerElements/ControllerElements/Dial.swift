@@ -23,6 +23,8 @@ public class Dial: CALayer, CompositeShapeType {
         }
     }
     
+    public var operatingInterval: (Float, Float) = (0.0, 1.0)
+    
     /// Components that need to built and commited
     public var components: [CALayer] = []
     
@@ -46,7 +48,8 @@ public class Dial: CALayer, CompositeShapeType {
         super.init()
     }
     
-    public init(frame: CGRect) {
+    public init(frame: CGRect, operatingInterval: (Float, Float) = (0.0, 1.0)) {
+        self.operatingInterval = operatingInterval
         super.init()
         self.frame = frame
         createComponents()
@@ -64,7 +67,7 @@ public class Dial: CALayer, CompositeShapeType {
         shape.path = path.cgPath
         shape.lineWidth = 1
         shape.strokeColor = Color(gray: 0.4, alpha: 1).cgColor
-        shape.fillColor = Color(gray: 0.9, alpha: 1).cgColor
+        shape.fillColor = Color(gray: 0, alpha: 1).cgColor
         addSublayer(shape)
     }
     
@@ -75,14 +78,14 @@ public class Dial: CALayer, CompositeShapeType {
             .addLine(to: CGPoint(x: 0.5 * frame.width, y: frame.height))
         let shape = CAShapeLayer()
         shape.path = path.cgPath
-        shape.lineWidth = 1
-        shape.strokeColor = Color(gray: 0, alpha: 1).cgColor
+        shape.lineWidth = 2
+        shape.strokeColor = Color(gray: 1, alpha: 0.5).cgColor
         layer.addSublayer(shape)
     }
     
     private func updateRotation(value: Float) {
         
-        let degrees = CGFloat(value) * 360
+        let degrees = CGFloat(position(from: value)) * 360
         let transform = rotationTransform(degrees: degrees)
         
         CATransaction.setDisableActions(true)
@@ -91,13 +94,18 @@ public class Dial: CALayer, CompositeShapeType {
     }
     
     fileprivate func rotation(from value: Float) -> CGFloat {
-        return CGFloat(value) * 360
+        return CGFloat(position(from: value)) * 360
     }
     
     private func rotationTransform(degrees: CGFloat) -> CGAffineTransform {
         var transform = CGAffineTransform.identity
         transform = transform.rotated(by: DEGREES_TO_RADIANS(degrees))
         return transform
+    }
+    
+    private func position(from value: Float) -> Float {
+        let range = operatingInterval.1 - operatingInterval.0
+        return range * value + operatingInterval.0
     }
 }
 

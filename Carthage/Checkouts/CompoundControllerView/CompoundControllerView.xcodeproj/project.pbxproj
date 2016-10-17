@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073797011DB469B900BADF40 /* NanoKontrolChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073797001DB469B900BADF40 /* NanoKontrolChannel.swift */; };
+		073797021DB469B900BADF40 /* NanoKontrolChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073797001DB469B900BADF40 /* NanoKontrolChannel.swift */; };
 		077D5F831DB45526008A67F3 /* NanoKontrolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D5F821DB45526008A67F3 /* NanoKontrolView.swift */; };
 		077D5F841DB45526008A67F3 /* NanoKontrolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D5F821DB45526008A67F3 /* NanoKontrolView.swift */; };
 		078185A01D91B9DF009E2C09 /* GraphicEqualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0781859F1D91B9DF009E2C09 /* GraphicEqualizerView.swift */; };
@@ -78,6 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		073797001DB469B900BADF40 /* NanoKontrolChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NanoKontrolChannel.swift; path = CompoundControllerView/NanoKontrolChannel.swift; sourceTree = "<group>"; };
 		077D5F821DB45526008A67F3 /* NanoKontrolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NanoKontrolView.swift; path = CompoundControllerView/NanoKontrolView.swift; sourceTree = "<group>"; };
 		0781859F1D91B9DF009E2C09 /* GraphicEqualizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraphicEqualizerView.swift; path = CompoundControllerView/GraphicEqualizerView.swift; sourceTree = "<group>"; };
 		0787A0E61D8F1C4600AB9396 /* CompoundControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompoundControllerView.swift; path = CompoundControllerView/CompoundControllerView.swift; sourceTree = "<group>"; };
@@ -194,6 +197,7 @@
 				0787A0E91D8F1DF300AB9396 /* MatrixMixerView.swift */,
 				0781859F1D91B9DF009E2C09 /* GraphicEqualizerView.swift */,
 				077D5F821DB45526008A67F3 /* NanoKontrolView.swift */,
+				073797001DB469B900BADF40 /* NanoKontrolChannel.swift */,
 			);
 			name = CompoundControllerView;
 			sourceTree = "<group>";
@@ -430,6 +434,7 @@
 				077D5F831DB45526008A67F3 /* NanoKontrolView.swift in Sources */,
 				078185A01D91B9DF009E2C09 /* GraphicEqualizerView.swift in Sources */,
 				0787A0E71D8F1C4600AB9396 /* CompoundControllerView.swift in Sources */,
+				073797011DB469B900BADF40 /* NanoKontrolChannel.swift in Sources */,
 				0787A0EA1D8F1DF300AB9396 /* MatrixMixerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +453,7 @@
 				077D5F841DB45526008A67F3 /* NanoKontrolView.swift in Sources */,
 				078185A11D91B9DF009E2C09 /* GraphicEqualizerView.swift in Sources */,
 				0787A0E81D8F1C4600AB9396 /* CompoundControllerView.swift in Sources */,
+				073797021DB469B900BADF40 /* NanoKontrolChannel.swift in Sources */,
 				0787A0EB1D8F1DF300AB9396 /* MatrixMixerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

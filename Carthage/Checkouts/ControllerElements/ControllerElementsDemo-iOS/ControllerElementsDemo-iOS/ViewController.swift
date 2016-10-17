@@ -11,7 +11,7 @@ import ControllerElements
 
 class ViewController: UIViewController {
 
-    let d = Dial(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    let d = Dial(frame: CGRect(x: 0, y: 0, width: 100, height: 100), operatingInterval: (0.1, 0.9))
     let s = Slider(frame: CGRect(x: 0, y: 0, width: 30, height: 300), label: "16K")
     
     override func viewDidLoad() {
@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         s.ramp(to: 1, over: 10)
         
         view.layer.addSublayer(s)
+        
     }
 
     override func didReceiveMemoryWarning() {

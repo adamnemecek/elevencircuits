@@ -30,7 +30,7 @@ class ViewController: UIViewController, F53OSCPacketDestination {
         createDivider()
         createCircleProgressBar()
         createGraphicEqualizer()
-        
+        createNanoKontrol()
         
         let labyrinth = Labyrinth(amountCircuits: 11)
         let lengths = labyrinth.path.map { $0.length } + labyrinth.path.reversed().map { $0.length }
@@ -57,6 +57,13 @@ class ViewController: UIViewController, F53OSCPacketDestination {
         timeline.start()
     }
     
+    private func createNanoKontrol() {
+        let nanoKontrol = NanoKontrolView(
+            frame: CGRect(x: 700, y: 100, width: 400, height: 300)
+        )
+        view.layer.addSublayer(nanoKontrol)
+    }
+    
     private func createDivider() {
         let divider = CAShapeLayer()
         let dividerPath = Path()
@@ -67,6 +74,20 @@ class ViewController: UIViewController, F53OSCPacketDestination {
         divider.strokeColor = UIColor.white.cgColor
         divider.opacity = 0.5
         view.layer.addSublayer(divider)
+    }
+    
+    private func createGraphicEqualizer() {
+        let width = rightWidth - 200
+        let height = 1/2 * width
+        self.graphicEqualizer = GraphicEqualizerView(
+            frame: CGRect(
+                x: rightCenter - 0.5 * width,
+                y: 800 - 0.5 * height,
+                width: width,
+                height: height
+            )
+        )
+        view.layer.addSublayer(graphicEqualizer)
     }
     
     private func createCircleProgressBar() {
@@ -85,26 +106,13 @@ class ViewController: UIViewController, F53OSCPacketDestination {
         self.circleLayer = CAShapeLayer()
         circleLayer.path = circlePath.cgPath
         circleLayer.fillColor = nil
-        circleLayer.strokeColor = UIColor.red.cgColor
+        circleLayer.strokeColor = UIColor.orange.cgColor
         circleLayer.lineWidth = 5
         circleLayer.strokeEnd = 0.0
         
         view.layer.addSublayer(circleLayer)
     }
-    
-    private func createGraphicEqualizer() {
-        let width = rightWidth - 200
-        let height = 1/3 * width
-        self.graphicEqualizer = GraphicEqualizerView(
-            frame: CGRect(
-                x: rightCenter - 0.5 * width,
-                y: 0.5 * view.frame.height - 0.5 * height,
-                width: width,
-                height: height
-            )
-        )
-        view.layer.addSublayer(graphicEqualizer)
-    }
+
     
     // TODO: refactor this to `dn-m/ProgressBar` framework
     // TODO: animateCircle(radius:duration:)
