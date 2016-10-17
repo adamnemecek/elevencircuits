@@ -89,11 +89,11 @@ class ViewController: UIViewController, F53OSCPacketDestination {
     }
     
     @objc private func stop() {
+        createCircleProgressBar()
         createNanoKontrol()
         createGraphicEqualizer()
         setInitialValues()
         timeline.stop()
-        circleLayer.removeFromSuperlayer()
         stopButton.removeFromSuperview()
         view.addSubview(startButton)
     }
@@ -280,6 +280,8 @@ class ViewController: UIViewController, F53OSCPacketDestination {
     }
     
     private func createCircleProgressBar() {
+        
+        circleLayer?.removeFromSuperlayer()
         
         let startAngle = CGFloat((3 * M_PI) / 2)
         let endAngle = startAngle + CGFloat(2 * M_PI)
