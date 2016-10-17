@@ -1,2 +1,2 @@
-# elevencircuits
+# eleven circuits for reflection on the glass
 Repository for app score of _eleven circuits for reflection on the glass_ for Weston Olencki and Matt Barbier.
