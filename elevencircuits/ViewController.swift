@@ -196,9 +196,8 @@ class ViewController: UIViewController, F53OSCPacketDestination {
         rampEQ("31.25", to: 0.5, for: 20)
         rampEQ("16K", to: 0.5, for: 22)
         rampEQ("31.25", to: 0.25, for: 24)
-        rampEQ("16K", to: 0.25, for: 26)
-        rampEQ("31.25", to: 0.5, for: 28)
-        rampEQ("16K", to: 0.5, for: 30)
+        
+        // Then play trombone: d quartersharp
     }
     
     private func rampEQ(_ band: String, to value: Float, for event: Int) {
@@ -217,15 +216,49 @@ class ViewController: UIViewController, F53OSCPacketDestination {
     
     private func addNanoKontrolEvents() {
         
-        rampNanoKontrolSlider(3, to: 1, over: 11..<21)
+        // SIN / SAW
         
+        // Fade saw up to full volume over middle section
+        rampNanoKontrolSlider(3, to: 1, over: 11..<21)
+        // Fade saw down to quiet volume to last section
+        rampNanoKontrolSlider(3, to: 0.25, over: 25..<29)
         // Crossfade saw -> sin
-        rampNanoKontrolDial(3, to: 1, at: lengths.sum, over: 30)
+        rampNanoKontrolDial(3, to: 0, at: lengths.sum, over: 30)
+        // Quickly mute sin
+        rampNanoKontrolSlider(3, to: 0, at: lengths.sum + 30, over: 0.125)
+        
+        // BASS
+        
+        // Fade to full over sections 2/3
+        rampNanoKontrolSlider(0, to: 1, over: 3..<11)
+        // Fade to 0.75 over 5th section
+        rampNanoKontrolSlider(0, to: 0.75, over: 21..<25)
+        
+        // DISTANT
+        
+        // Fade to full over sections 2/3
+        rampNanoKontrolSlider(1, to: 1, over: 3..<11)
+        // Fade to none over section 5/6
+        rampNanoKontrolSlider(1, to: 0, over: 21..<29)
+        
+        // FRONT
+        
+        // Fade to full within section 4
+        rampNanoKontrolSlider(2, to: 1, over: 11..<18)
+        
+        // Fade out by end of section 5
+        rampNanoKontrolSlider(2, to: 0, over: 18..<25)
     }
     
     private func rampNanoKontrolDial(_ channel: Int, to value: Float, at offset: Double, over duration: Double) {
         timeline.add(at: offset) {
             self.nanoKontrol.channels[channel].dial.ramp(to: value, over: duration)
+        }
+    }
+    
+    private func rampNanoKontrolSlider(_ channel: Int, to value: Float, at offset: Double, over duration: Double) {
+        timeline.add(at: offset) {
+            self.nanoKontrol.channels[channel].slider.ramp(to: value, over: duration)
         }
     }
     
